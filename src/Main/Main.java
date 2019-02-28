@@ -10,6 +10,7 @@ public class Main {
         String filename = "b_lovely_landscapes.txt";
         photos = FileParser.parse(filename);
 
+
     }
 
 
