@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Slideshow {
 
-    static final int NB_ITERATION = 15000000;
+    static final int NB_ITERATION = 500000;
 
 	ArrayList<Slide> slides;
 	private int score;
