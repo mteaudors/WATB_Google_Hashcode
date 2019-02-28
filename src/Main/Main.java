@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Photo> photos = new ArrayList<Photo>();
 
-        String filename = "b_lovely_landscapes.txt";
+        String filename = "src/Main/b_lovely_landscapes.txt";
         photos = FileParser.parse(filename);
 
 
