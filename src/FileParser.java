@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class FileParser {
@@ -36,5 +33,26 @@ public class FileParser {
             e.printStackTrace();
         }
         return photos;
+    }
+
+    static void writeSlideshowOnFile(Slideshow slideshow, String filename)
+    {
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("filename", "ascii");
+            writer.println(l.size());
+            for(Slide slide : slideshow.l)
+            {
+                if(slide.horizontal == null)
+                {
+                    writer.println(slide.vertical[0] + " " + slide.vertical[1]);
+                }
+            }
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 }
