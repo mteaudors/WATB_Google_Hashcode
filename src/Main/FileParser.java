@@ -47,7 +47,10 @@ public class FileParser {
             {
                 if(slide.horizontal == null)
                 {
-                    writer.println(slide.vertical[0] + " " + slide.vertical[1]);
+                    writer.println(slide.vertical[0].getId() + " " + slide.vertical[1].getId());
+                }else
+                {
+                    writer.println(slide.horizontal.getId());
                 }
             }
             writer.close();
