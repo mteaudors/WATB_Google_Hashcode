@@ -1,3 +1,5 @@
+package Main;
+
 import java.util.ArrayList;
 
 public class Photo {
@@ -26,7 +28,7 @@ public class Photo {
     public ArrayList<String> getTags() {
         return tags;
     }
-    
+
 
 
 

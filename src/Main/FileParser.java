@@ -1,3 +1,5 @@
+package Main;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -40,7 +42,7 @@ public class FileParser {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter("filename", "ascii");
-            writer.println(l.size());
+            writer.println(slideshow.slide.size());
             for(Slide slide : slideshow.l)
             {
                 if(slide.horizontal == null)
