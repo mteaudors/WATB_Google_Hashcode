@@ -28,6 +28,7 @@ public class Slide {
 				slideTags.add(s);
 		horizontal = null;
 	}
+
 	
 	public int computeScore(Slide suivant) {
 		ArrayList<String> l1 = slideTags;
@@ -46,4 +47,16 @@ public class Slide {
 		
 		return Math.min(sizeL1, Math.min(commonSize, sizeL2));
 	}
+
+	public String toString() {
+	    StringBuilder s = new StringBuilder();
+	    if(horizontal != null) {
+	        s.append(horizontal.getId());
+        }
+	    else if(vertical != null) {
+	        s.append(vertical[0] + "," + vertical[1]);
+        }
+
+	    return s.toString();
+    }
 }
