@@ -14,7 +14,7 @@ public class Slide {
 	
 	public Slide(Photo hori) {
 		this.horizontal = hori;
-		slideTags = hori.tags;
+		slideTags = horizontal.getTags();
 		vertical = null;
 	}
 	
@@ -22,8 +22,8 @@ public class Slide {
 		vertical = new Photo[2];
 		vertical[0] = v1;
 		vertical[1] = v2;
-		slideTags = vertical[0].tags;
-		for(String s : vertical[1].tags) 
+		slideTags = vertical[0].getTags();
+		for(String s : vertical[1].getTags())
 			if(!slideTags.contains(s))
 				slideTags.add(s);
 		horizontal = null;
