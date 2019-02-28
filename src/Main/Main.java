@@ -10,7 +10,9 @@ public class Main {
         String filename = "src/Main/b_lovely_landscapes.txt";
         photos = FileParser.parse(filename);
 
-
+        for(Photo photo : photos) {
+            System.out.println(photo.getId() + " " + photo.isHorizontal() + " " + photo.getTags());
+        }
     }
 
 
