@@ -41,7 +41,7 @@ public class FileParser {
     {
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter("filename", "ascii");
+            writer = new PrintWriter(filename, "ascii");
             writer.println(slideshow.slides.size());
             for(Slide slide : slideshow.slides)
             {
