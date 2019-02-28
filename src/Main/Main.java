@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Photo> photos = new ArrayList<Photo>();
 
-        String filename = "src/Main/b_lovely_landscapes.txt";
+        String filename = args[1] != null ? args[1] : "e_shiny_selfies.txt";
         photos = FileParser.parse(filename);
 
         ArrayList<Slide> slides = new ArrayList<Slide>();
@@ -31,8 +31,9 @@ public class Main {
 
 
         System.out.println(slideshow.getScore());
-        slideshow.sortSlideShow();
-        System.out.println(slideshow.getScore());
+        //slideshow.sortSlideShow();
+        Sorting.sort(slideshow);
+        System.out.println(slideshow.computeScore());
 
         FileParser.writeSlideshowOnFile(slideshow , "score");
 

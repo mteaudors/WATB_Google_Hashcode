@@ -9,10 +9,12 @@ public class Sorting {
         int bestj;
         int bestScore;
         int current;
+        int sc = 0;
         for(int i= 1; i< s.slides.size(); i++)
         {
             bestj = i;
             bestScore = 0;
+            int size = s.slides.get(i-1).slideTags.size()/3;
             for(int j=i; j< s.slides.size(); j++)
             {
                 current = s.slides.get(i-1).computeScore(s.slides.get(j));
@@ -20,10 +22,19 @@ public class Sorting {
                 {
                     bestj = j;
                     bestScore = current;
+                    if(current >= size)
+                    {
+                        break;
+                    }
                 }
 
             }
-            Collections.swap(s.slides, bestj, i);
+            sc += bestScore;
+            Slide tempSlide = s.slides.get(bestj);
+            s.slides.set(bestj, s.slides.get(i));
+            s.slides.set(i, tempSlide);
+
         }
+        System.out.println(sc);
     }
 }
