@@ -28,7 +28,7 @@ public class FileParser {
                     {
                         tags.add(values[i]);
                     }
-                    photos.add(new Photo(id, isHorizontal, tags));
+                    photos.add(new Photo(id++, isHorizontal, tags));
                 }
             }
         } catch (IOException e) {
