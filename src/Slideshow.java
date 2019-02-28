@@ -1,20 +1,22 @@
+import Main.Slide;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Slideshow {
 	ArrayList<Slide> slides;
 	int score;
-	
+
 	public Slideshow() {
 		slides = new ArrayList<>();
 		score = 0;
 	}
-	
+
 	public Slideshow(ArrayList<Slide> l) {
 		this.slides = l;
 		score = computeScore();
 	}
-	
+
 	public int computeScore() {
 		for(int i = 0; i < slides.size()-1; ++i)
 			score += slides.get(i).computeScore(slides.get(i+1));
